@@ -1,5 +1,7 @@
 package com.example.pagamento.pagamento.DTO;
 
+//DTO
+
 import java.math.BigDecimal;
 import java.util.List;
 
