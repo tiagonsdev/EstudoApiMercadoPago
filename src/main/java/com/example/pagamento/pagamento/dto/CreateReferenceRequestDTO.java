@@ -1,6 +1,10 @@
-package com.example.pagamento.pagamento.DTO;
+package com.example.pagamento.pagamento.dto;
 
 //DTO
+
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -8,11 +12,24 @@ import java.util.List;
 public record CreateReferenceRequestDTO(
 
         Long userId,
+
+        @DecimalMin(value = "0,01", message = "o valor minimo tem que ser maior que zero")
         BigDecimal totalAmount,
+
+        @NotNull
         PayerDto payer,
+
+        @NotNull
         BackUrlsDTO backUrls,
+
+        @NotNull
         DeliveryAddressDTO deliveryAddress,
+
+        @NotNull
         String notificationUrl,
+
+        @NotNull
+        @Valid
         List<ItemDTO> ItemDTO
 ) {
     public record PayerDto(
