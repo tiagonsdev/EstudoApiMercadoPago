@@ -19,6 +19,12 @@ target/
 *.iws
 *.iml
 *.ipr
+*.properties
+
+
+# Arquivos de configuração sensíveis
+src/main/resources/application.properties
+
 
 ### NetBeans ###
 /nbproject/private/
